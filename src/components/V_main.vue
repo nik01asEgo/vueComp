@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <p>{{ title }}</p>
+  <div class="v_Main">
     <vCatalog></vCatalog>
   </div>
 </template>
@@ -17,13 +16,16 @@
 
     created() {},
     data() {
-      return {
-        title: 'i am main'
-      };
+      return {};
     },
     props: {},
     methods: {},
   };
 </script>
 
-<style lang="scss" scoped></style>
+<style >
+.v_Main {
+  margin: 0;
+  padding: 0;
+}
+</style>

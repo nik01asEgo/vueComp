@@ -83,14 +83,12 @@
   };
 </script>
 
-<style scoped>
+<style>
   .v_catalog {
-    max-width: 1200 px;
+    background-color: #f4f7f9;
     display: flex;
     flex-wrap: wrap;
-    align-content: stretch;
-    align-items: center;
-    background-color: #f4f7f9;
-    flex: 0 1 33,3%;
+    margin: 0;
+    padding: 0;
   }
 </style>

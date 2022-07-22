@@ -1,10 +1,12 @@
 <template>
   <div class= "v_catalog_item">
-    <a href="http://google.com">
-      <img class="v_catalog_item_image" 
-      :src="require ('../assets/images/' + item_data.image)" 
-      alt= "webp">
-    </a>        
+    <div class="v_catalog_item_image_contaner">
+      <a href="http://google.com">
+        <img class="v_catalog_item_image" 
+        :src="require ('../assets/images/' + item_data.image)" 
+        alt= "webp">
+      </a>
+    </div>        
     <a class="v_catalog_item_name" href="http://google.com">
         <p >{{ item_data.name }}</p>
     </a>
@@ -40,38 +42,38 @@ export default {
 };
 </script>
   
-<style scoped>
+<style>
   .v_catalog_item {
     display: block;
-    border: 1px solid;
-    position:relative;
-    text-align: center;
-    max-width: 33%;
-    height: 500 px;
+    width: 33%;
+    height: 500px;
     background-color: rgb(255, 255, 255);
+    margin: 10px;
+    border-radius: 4px;
+    border: 1px;
+    
+  }
+  @media screen and (max-width: 900px) {
+   .v_catalog_item {
+      width: 50%;
+   } 
+  }
+  .v_catalog_item_image_contaner {
+    width: 100%;
+    height: 250px;    
   }
   .v_catalog_item_image {
-    
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: 20px;
-  object-fit: cover;
-  display: block;
-  margin: auto;
-    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;    
   }
 .v_catalog_item_name {
-
   text-decoration: none;
   color: rgb(12, 12, 12);
   font-family: Montserrat,sans-serif;
   font-size: 19px;
   font-weight: 500;
-  text-align: left;
-  margin-left: 15 px;
-
 }
 .v_catalog_item_city {
   
