@@ -88,7 +88,6 @@
     background-color: #f4f7f9;
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
   }
 </style>
