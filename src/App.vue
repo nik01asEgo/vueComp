@@ -34,7 +34,11 @@ export default {
   background-color: #f4f7f9;
    
 }
+all {
+  transition-duration: all 0,2s;
+}
 .vContaner {
+  transition-duration: all 0,2s;
   display: grid;
   grid-template-areas:
     'header header'
@@ -43,8 +47,8 @@ export default {
   grid-gap: 10px;
   grid-template-rows: 100px 1fr 100px;  
   /* min-width: 1550px; */
-  margin-left: 90px;
-  margin-right: 90px;
+  margin-left: 180px;
+  margin-right: 180px;
 }
 .vHeader {
   grid-area: header;
@@ -66,8 +70,7 @@ export default {
   .vContaner {
   margin-left: 90px;
   margin-right: 90px;
-  width: fill-available;
- 
+  width: stretch;
   }
 }
 @media screen and (max-width: 1550px) {
@@ -75,27 +78,47 @@ export default {
     width: 325px;
   } 
 }
-@media screen and (max-width: 1450px) { 
+@media screen and (min-width: 1240px) and (max-width: 1450px) { 
   .v_Navigation {
     display: none;
   }
   .vContaner {
-    width: 1000px;
+    width: 1050px;
   }
 }
-@media screen and (max-width: 1270px) {
+@media screen and (min-width: 1160px) and (max-width: 1240px) {
+  .vContaner {
+    width: 1050px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .v_Navigation {
+    display: none;
+  }
+}
+@media screen and (max-width: 1160px) {
   .vContaner {
     margin-left: 50px;
     margin-right: 50px;
   }
+  .v_Navigation {
+    display: none;
+  }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1000px) {
   .vContaner {
-    width: calc(100%-100px);
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 731px) and (max-width: 860px) {
+  .vContaner {  
+    width: 691px;
+    }
+} 
+/* @media screen and (max-width: 731px) */
 
-  }
-}
+
+
 
 </style>
