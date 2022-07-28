@@ -34,11 +34,7 @@ export default {
   background-color: #f4f7f9;
    
 }
-all {
-  transition-duration: all 0,2s;
-}
 .vContaner {
-  transition-duration: all 0,2s;
   display: grid;
   grid-template-areas:
     'header header'
@@ -46,7 +42,6 @@ all {
     'footer footer';
   grid-gap: 10px;
   grid-template-rows: 100px 1fr 100px;  
-  /* min-width: 1550px; */
   margin-left: 180px;
   margin-right: 180px;
 }
@@ -68,9 +63,9 @@ all {
 }
 @media screen and (max-width: 1770px) {
   .vContaner {
-  margin-left: 90px;
-  margin-right: 90px;
-  width: stretch;
+    margin-left: 90px;
+    margin-right: 90px;
+    width: stretch;
   }
 }
 @media screen and (max-width: 1550px) {
@@ -116,9 +111,4 @@ all {
     width: 691px;
     }
 } 
-/* @media screen and (max-width: 731px) */
-
-
-
-
 </style>

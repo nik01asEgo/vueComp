@@ -6,14 +6,11 @@
 
 <script>
   import vCatalog from "./V_catalog.vue";
-
   export default {
     name: "v_main",
-
     components: {
       vCatalog
     },
-
     created() {},
     data() {
       return {};
@@ -24,9 +21,9 @@
 </script>
 
 <style >
-.v_Main {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  .v_Main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 </style>

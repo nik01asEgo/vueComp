@@ -1,6 +1,12 @@
 <template>
   <div class="v_catalog">
-   
+    <div class="v_catalog_text_conteiner">
+      <h1>Кошки в Москве</h1>
+      <p>На Kinpet нашлось 1 077 объявлений кошек в Москве,
+        которые соответствуют вашим критериям. 
+        Подберите понравившегося питомца и свяжитесь с продавцом в два клика.
+      </p>
+    </div>
     <vCatalogItem 
       v-for= "item in cats"
       :key= "item.article"
@@ -89,5 +95,9 @@
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    font-family: Montserrat,sans-serif;
+  }
+  .v_catalog_text_conteiner {
+    text-align: left;
   }
 </style>
