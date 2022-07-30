@@ -91,6 +91,7 @@
 
 <style>
   .v_catalog {
+    transition: 0,5s;
     background-color: #f4f7f9;
     display: flex;
     flex-wrap: wrap;
