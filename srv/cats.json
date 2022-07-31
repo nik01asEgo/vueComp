@@ -1,6 +1,5 @@
-{
-    "cats": [
-        {
+[
+    {
         "image": "1.webp",
         "name": "Мейн кун",
         "city": "Москва",
@@ -8,8 +7,8 @@
         "owner": "Вероника",
         "article": "c1",
         "available": true
-        },
-        {
+    },
+    {
         "image": "2.webp",
         "name": "Продажа",
         "city": "Москва",
@@ -17,8 +16,8 @@
         "owner": "Татьяна",
         "article": "c2",
         "available": true
-        },
-        {
+    },
+    {
         "image": "3.webp",
         "name": "Продажа",
         "city": "Москва",
@@ -26,8 +25,8 @@
         "owner": "Татьяна",
         "article": "c3",
         "available": true
-        },
-        {
+    },
+    {
         "image": "4.webp",
         "name": "3,5 мес принцесса Мура ищет семью!",
         "city": "Москва",
@@ -35,8 +34,8 @@
         "owner": "Светлана",
         "article": "c4",
         "available": true
-        },
-        {
+    },
+    {
         "image": "5.webp",
         "name": "Симон и Сима. Котята в добрые руки",
         "city": "Москва",
@@ -44,8 +43,8 @@
         "owner": "Светлана",
         "article": "c5",
         "available": true
-        },
-        {
+    },
+    {
         "image": "6.webp",
         "name": "Маленькие котята в добрые руки",
         "city": "Москва",
@@ -53,7 +52,5 @@
         "owner": "Светлана",
         "article": "c6",
         "available": true
-        }
-        
-    ]
-}
+    }
+]
