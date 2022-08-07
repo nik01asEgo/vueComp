@@ -1,5 +1,5 @@
 <template>
-  <div class= "vContaner">
+  <div class="vContaner">
     <vHeader class="vHeader"></vHeader>
     <vMain class="vMain"></vMain>
     <vNavigation class="vNavigation"></vNavigation>
@@ -8,20 +8,20 @@
 </template>
 
 <script>
-  import vHeader from "./components/V_header.vue";
-  import vMain from "./components/V_main.vue";
-  import vNavigation from "./components/V_Navigation.vue";
-  import vFooter from "./components/V_footer.vue";
+import vHeader from "./components/V_header.vue";
+import vMain from "./components/V_main.vue";
+import vNavigation from "./components/V_Navigation.vue";
+import vFooter from "./components/V_footer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     vHeader,
     vMain,
     vNavigation,
-    vFooter
-  }
-}
+    vFooter,
+  },
+};
 </script>
 
 <style>
@@ -32,21 +32,23 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-color: #f4f7f9;
-   
 }
 .vContaner {
   display: grid;
   grid-template-areas:
-    'header header'
-    'main navigation'
-    'footer footer';
+    "header header"
+    "main navigation"
+    "footer footer";
   grid-gap: 10px;
-  grid-template-rows: 100px 1fr 100px;  
+  grid-template-rows: 100px 1fr 100px;
   margin-left: 180px;
   margin-right: 180px;
 }
 .vHeader {
   grid-area: header;
+  position: fixed;
+  top: 0px;
+  z-index: 15;
 }
 .vMain {
   grid-area: main;
@@ -71,9 +73,9 @@ export default {
 @media screen and (max-width: 1550px) {
   .v_Navigation {
     width: 325px;
-  } 
+  }
 }
-@media screen and (min-width: 1240px) and (max-width: 1450px) { 
+@media screen and (min-width: 1240px) and (max-width: 1450px) {
   .v_Navigation {
     display: none;
   }
@@ -107,8 +109,8 @@ export default {
   }
 }
 @media screen and (min-width: 731px) and (max-width: 860px) {
-  .vContaner {  
+  .vContaner {
     width: 691px;
-    }
-} 
+  }
+}
 </style>

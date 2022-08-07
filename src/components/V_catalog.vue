@@ -4,9 +4,8 @@
     <div v-else class="v_catalog_text_conteiner">
       <h1>Кошки в Москве</h1>
       <p>
-        На Kinpet нашлось 1 077 объявлений кошек в Москве, которые соответствуют
-        вашим критериям. Подберите понравившегося питомца и свяжитесь с
-        продавцом в два клика.
+        На Kinpet нашлось 1 077 объявлений кошек в Москве, которые соответствуют вашим
+        критериям. Подберите понравившегося питомца и свяжитесь с продавцом в два клика.
       </p>
     </div>
     <vCatalogItem v-for="item in cats" :key="item.article" :item_data="item" />
@@ -14,7 +13,7 @@
 </template>
 
 <script>
-import vCatalogItem from "./V_catalog_item";
+import vCatalogItem from "@/components/V_catalog_item";
 import { cats } from "@/static_store";
 
 export default {
@@ -31,13 +30,13 @@ export default {
   },
   props: {},
   methods: {},
-  beforeMount() {
-    (async () => {
-      const result = await fetch("http://localhost:8081/cats.json");
-      this.cats = result.body();
-      this.isLoading = false;
-    })();
-  },
+  // beforeMount() {
+  //   (async () => {
+  //     const result = await fetch("http://localhost:8081/cats.json");
+  //     this.cats = result.body();
+  //     this.isLoading = false;
+  //   })();
+  // },
 };
 </script>
 

@@ -103,9 +103,18 @@ export const ages = [
     { name: "Пожилые (Старше 7 лет)", value: 10 },
 ];
 
+export const adTypes = [
+    { name: "Любой", value: 1 },
+    { name: "На продажу/Купить", value: 2 },
+    { name: "Добрые руки/Отдам", value: 3 },
+    { name: "Вязка", value: 4 },
+    { name: "Потерявшиеся", value: 5 },
+];
+
 export const cats = [
     {
         image: "1.webp",
+        icon: "photo_2022_05_02_15_54_17.jpg",
         name: "Мейн кун",
         city: "Москва",
         price: "80 Р",
@@ -115,6 +124,7 @@ export const cats = [
     },
     {
         image: "2.webp",
+        icon: "",
         name: "Продажа",
         city: "Москва",
         price: "40000 Р",
@@ -124,6 +134,7 @@ export const cats = [
     },
     {
         image: "3.webp",
+        icon: "",
         name: "Продажа",
         city: "Москва",
         price: "40000 Р",
@@ -133,6 +144,7 @@ export const cats = [
     },
     {
         image: "4.webp",
+        icon: "",
         name: "3,5 мес принцесса Мура ищет семью!",
         city: "Москва",
         price: "10 Р",
@@ -142,6 +154,7 @@ export const cats = [
     },
     {
         image: "5.webp",
+        icon: "",
         name: "Симон и Сима. Котята в добрые руки",
         city: "Москва",
         price: "Бесплатно",
@@ -151,11 +164,34 @@ export const cats = [
     },
     {
         image: "6.webp",
+        icon: "",
         name: "Маленькие котята в добрые руки",
         city: "Москва",
         price: "10 Р",
-        owner: "Светлана",
+        owner: "Фекла",
         article: "c6",
         available: true
+    },
+    {
+        image: "7.webp",
+        icon: "photo_2022_05_02_15_54_17.jpg",
+        name: "Уникальная Агата",
+        city: "Москва",
+        price: "Бесплатно",
+        owner: "Зооцентр КиС",
+        article: "c7",
+        available: true
     }
+];
+export const genders = [
+    { name: "Любой", value: 1 },
+    { name: "Мальчик", value: 2 },
+    { name: "Девочка", value: 3 },
+];
+export const colors = [
+    { name: "Любой", value: 1 },
+    { name: "Белый", value: 2 },
+    { name: "Черный", value: 3 },
+    { name: "Рыжий", value: 4 },
+    { name: "Другой", value: 5 },
 ]

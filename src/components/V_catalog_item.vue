@@ -1,27 +1,35 @@
 <template>
   <div class="v_catalog_item_contaner">
-    <div class= "v_catalog_item">
+    <div class="v_catalog_item">
       <div class="v_catalog_item_image_contaner">
         <a href="http://google.com">
-          <img class="v_catalog_item_image" 
-          :src="require ('../assets/images/' + item_data.image)" 
-          alt= "webp">
+          <img
+            class="v_catalog_item_image"
+            :src="require('../assets/images/' + item_data.image)"
+            alt="webp"
+          />
         </a>
-      </div>        
+      </div>
       <div class="v_text_contaner">
         <a class="v_catalog_item_name" href="http://google.com">
-            <p >{{ item_data.name }}</p>
+          <p>{{ item_data.name }}</p>
         </a>
         <a class="v_catalog_item_city" href="http://google.com">
-            <p >{{ item_data.city }}</p>
+          <p>{{ item_data.city }}</p>
         </a>
 
         <p class="v_catalog_item_price">{{ item_data.price }}</p>
-        <hr class="v_line">
-      </div>    
+        <hr class="v_line" />
+      </div>
       <div class="v_owner_contaner">
         <a class="v_catalog_item_owner" href="http://google.com">
-        <p >{{ item_data.owner }}</p>
+          <div v-if="item_data.icon" class="v_icon_true">
+            <img :src="require('../assets/icons/' + item_data.icon)" alt="" />
+          </div>
+          <div v-if="!item_data.icon" class="v_icon_false">{{ item_data.owner[0] }}</div>
+          <div>
+            {{ item_data.owner }}
+          </div>
         </a>
       </div>
     </div>
@@ -38,15 +46,15 @@ export default {
   props: {
     item_data: {
       type: Object,
-      default () {
-        return {}
-      }
-    }
+      default() {
+        return {};
+      },
+    },
   },
   methods: {},
 };
 </script>
-  
+
 <style>
 .v_line {
   color: rgb(196, 196, 196);
@@ -57,6 +65,8 @@ export default {
 }
 .v_owner_contaner {
   margin: 25px;
+  width: 100%;
+  height: 80px;
 }
 .v_catalog_item_contaner {
   width: 33%;
@@ -73,41 +83,70 @@ export default {
 }
 .v_catalog_item_image_contaner {
   width: 100%;
-  height: 250px;    
+  height: 250px;
 }
 .v_catalog_item_image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;    
+  border-radius: 4px;
 }
 .v_catalog_item_name {
   text-decoration: none;
   color: rgb(12, 12, 12);
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 19px;
   font-weight: 500;
 }
 .v_catalog_item_city {
   text-decoration: none;
   color: #777;
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-align: left;
 }
+.v_icon_true {
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 25px;
+  border-radius: 50%;
+}
+.v_icon_false {
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  left: 25px;
+  border-radius: 50%;
+  background-color: #e2e2e2;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  line-height: 40px;
+}
+.v_icon_true img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 .v_catalog_item_owner {
   text-decoration: none;
   color: #777;
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 15px;
   font-weight: 500;
-  text-align: left;
+  display: flex;
+}
+.v_catalog_item_owner div {
+  align-self: center;
+  margin: 2px;
 }
 .v_catalog_item_price {
   text-decoration: none;
   color: rgb(12, 12, 12);
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 19px;
   font-weight: 500;
   text-align: left;
@@ -115,29 +154,29 @@ export default {
 @media screen and (max-width: 860px) {
   .v_catalog_item_contaner {
     width: 50%;
-} 
   }
+}
 @media screen and (min-width: 550px) and (max-width: 600px) {
   .v_catalog_item {
     width: 100%;
     height: 280px;
     display: grid;
     grid-template-areas:
-    'image text'
-    'image text'
-    'image text'
-    'image owner'
-    'image owner';
-  grid-gap: 10px;
-  grid-template-columns: 220px 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+      "image text"
+      "image text"
+      "image text"
+      "image owner"
+      "image owner";
+    grid-gap: 10px;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   }
   .v_catalog_item_contaner {
     width: 100%;
-    }
+  }
   .v_catalog_item_image_contaner {
-    grid-area: image;   
-    }
+    grid-area: image;
+  }
   .v_text_contaner {
     text-align: left;
     grid-area: text;
@@ -152,21 +191,21 @@ export default {
     height: 250px;
     display: grid;
     grid-template-areas:
-    'image text'
-    'image text'
-    'owner owner';
-  grid-gap: 15px;
-  grid-template-columns: 5fr 6fr;
-  grid-template-rows: 1fr 1fr 1fr; 
+      "image text"
+      "image text"
+      "owner owner";
+    grid-gap: 15px;
+    grid-template-columns: 5fr 6fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
   .v_catalog_item_contaner {
     width: 100%;
-    }
+  }
   .v_catalog_item_image_contaner {
-    grid-area: image;  
-    margin: 0; 
+    grid-area: image;
+    margin: 0;
     height: 100%;
-    }
+  }
   .v_text_contaner {
     text-align: left;
     grid-area: text;
@@ -174,7 +213,7 @@ export default {
   }
   .v_owner_contaner {
     grid-area: owner;
-    margin: 0;
+    margin: 10px;
   }
   .v_line {
     display: none;

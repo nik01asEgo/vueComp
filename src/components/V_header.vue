@@ -1,21 +1,49 @@
 <template>
-  <div> 
-    <p> {{ title }}</p>
+  <div class="wrapper">
+    <div>
+      <vButton @click="btnClick" btnTitle="Войти" :entrance="true" :submit="false" />
+      <vButton
+        @click="btnClick"
+        btnTitle="Подать объявление"
+        :entrance="false"
+        :submit="true"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import vButton from "@/components/V_button.vue";
 export default {
   name: "v_header",
-  created() {},
+  components: {
+    vButton,
+  },
   data() {
     return {
-      title: 'i am header'
+      title: "i am header",
     };
   },
   props: {},
-  methods: {},
+  methods: {
+    btnClick() {
+      console.log("Кнопка нажата");
+    },
+  },
 };
 </script>
 
-<style></style>
+<style lang="less" scoped>
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: flex-end;
+
+  background-color: #fff;
+  > div {
+    display: flex;
+    align-items: center;
+  }
+}
+</style>

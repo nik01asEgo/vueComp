@@ -7,12 +7,15 @@
       <div
         @click="isVisible = !isVisible"
         class="wrapper"
-        :class="{ down: !isVisible, up: isVisible }"
+        :class="{ down: !isVisible, up: isVisible, full: Boolean(selectedItem) }"
       >
         <p :class="{ empty: !Boolean(selectedItem) }">
           {{ selectedItem?.name || placeholder }}
         </p>
-        <div v-if="isVisible">
+        <div
+          v-if="isVisible"
+          :class="{ selected: Boolean(selectedItem), unSelected: !Boolean(selectedItem) }"
+        >
           <p
             v-for="(item, index) in items"
             :key="index"
@@ -48,6 +51,9 @@ export default {
     title: {
       type: String,
     },
+    // clearSelectedItem: {
+    //   type: Object,
+    // },
   },
   data() {
     return {
@@ -68,6 +74,9 @@ export default {
         this.isVisible = false;
       }
     },
+    // clearSelectedItem: function () {
+    //   this.selectedItem.value = "";
+    // },
   },
   mounted() {
     document.addEventListener("click", this.vHideSelect);
@@ -84,25 +93,33 @@ export default {
 }
 
 .contaner {
+  box-sizing: border-box;
   margin: 5px 25px;
   position: relative;
 
   > .wrapper {
     width: 100%;
-    height: 60px;
+    min-height: 60px;
     border: 1px;
     border-radius: 4px;
+    box-sizing: border-box;
     background-color: #f4f7f9;
-    border: 1px solid #a4ecce;
+    border: 1px solid #f4f7f9;
     cursor: pointer;
 
+    &.full {
+      border: 1px solid #a4ecce;
+      &.down {
+        background-color: #e7f0ec;
+      }
+    }
     &.wrapper::before {
       position: absolute;
       right: 15px;
       top: 25px;
       content: "";
-      width: 10px;
-      height: 10px;
+      width: 5px;
+      height: 5px;
       border-left: 2px solid #000;
       border-top: 2px solid #000;
       transition: transform linear 200ms;
@@ -118,27 +135,39 @@ export default {
 
     > p {
       margin-left: 25px;
-      margin-top: 20px;
+      margin-right: 25px;
+
       &.empty {
-        color: green;
+        opacity: 0.5;
       }
     }
 
     > div {
       position: absolute;
-      top: 50px;
+      top: 55px;
       left: 0px;
       width: 100%;
+      max-height: 300px;
       border: 1px;
       border-radius: 4px;
       background-color: #f4f7f9;
       box-sizing: border-box;
       z-index: 10;
+      overflow: auto;
+
+      &.unSelected {
+        border-left: 1px solid #f4f7f9;
+        border-bottom: 1px solid #f4f7f9;
+        border-right: 1px solid #f4f7f9;
+      }
+      &.selected {
+        border-left: 1px solid #a4ecce;
+        border-bottom: 1px solid #a4ecce;
+        border-right: 1px solid #a4ecce;
+      }
       > p {
-        font-size: 16px;
-        &.item_selected {
-          background-color: red;
-        }
+        font-size: 15px;
+        margin-left: 25px;
         &:hover {
           color: #0cb66f;
           text-decoration: underline;
