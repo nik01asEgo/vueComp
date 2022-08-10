@@ -1,6 +1,7 @@
 <template>
   <div class="vContaner">
-    <vHeader class="vHeader"></vHeader>
+    <vHeader class="vHeader" @showPopupChooseCity="showPopupChooseCity"></vHeader>
+    <vPopup v-if="isPopupVisible" :items="cities" @closePopup="closePopupChooseCity" />
     <vMain class="vMain"></vMain>
     <vNavigation class="vNavigation"></vNavigation>
     <vFooter class="vFooter"></vFooter>
@@ -12,6 +13,8 @@ import vHeader from "./components/V_header.vue";
 import vMain from "./components/V_main.vue";
 import vNavigation from "./components/V_Navigation.vue";
 import vFooter from "./components/V_footer.vue";
+import vPopup from "@/components/V_popup.vue";
+import { cities } from "@/static_store";
 
 export default {
   name: "App",
@@ -20,6 +23,22 @@ export default {
     vMain,
     vNavigation,
     vFooter,
+    vPopup,
+  },
+  data() {
+    return {
+      cities,
+      citySelected: undefined,
+      isPopupVisible: false,
+    };
+  },
+  methods: {
+    showPopupChooseCity() {
+      this.isPopupVisible = true;
+    },
+    closePopupChooseCity() {
+      this.isPopupVisible = false;
+    },
   },
 };
 </script>
@@ -41,13 +60,18 @@ export default {
     "footer footer";
   grid-gap: 10px;
   grid-template-rows: 100px 1fr 100px;
+  grid-template-columns: 1fr;
   margin-left: 180px;
   margin-right: 180px;
 }
 .vHeader {
+  width: 100%;
+  height: 100px;
   grid-area: header;
   position: fixed;
   top: 0px;
+  left: 0px;
+
   z-index: 15;
 }
 .vMain {

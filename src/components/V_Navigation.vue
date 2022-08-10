@@ -57,7 +57,6 @@
 
 <script>
 import vSelectDropdown from "@/components/V_select_dropdown.vue";
-
 import { breeds, ages, adTypes, genders, colors } from "@/static_store";
 
 export default {

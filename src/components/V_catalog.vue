@@ -30,13 +30,6 @@ export default {
   },
   props: {},
   methods: {},
-  // beforeMount() {
-  //   (async () => {
-  //     const result = await fetch("http://localhost:8081/cats.json");
-  //     this.cats = result.body();
-  //     this.isLoading = false;
-  //   })();
-  // },
 };
 </script>
 

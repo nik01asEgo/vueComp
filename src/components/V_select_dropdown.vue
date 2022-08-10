@@ -51,9 +51,6 @@ export default {
     title: {
       type: String,
     },
-    // clearSelectedItem: {
-    //   type: Object,
-    // },
   },
   data() {
     return {
@@ -74,9 +71,6 @@ export default {
         this.isVisible = false;
       }
     },
-    // clearSelectedItem: function () {
-    //   this.selectedItem.value = "";
-    // },
   },
   mounted() {
     document.addEventListener("click", this.vHideSelect);

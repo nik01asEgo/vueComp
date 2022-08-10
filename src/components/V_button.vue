@@ -1,6 +1,8 @@
 <template>
   <div :class="choiceBtn" @click="click">
+    <i class="material-icons" v-if="prependIcon">{{ prependIcon }}</i>
     <span>{{ btnTitle }}</span>
+    <i class="material-icons" v-if="appendIcon">{{ appendIcon }}</i>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {
   props: {
     btnTitle: {
       type: String,
-      default: "Press",
+      default: "",
     },
     submit: {
       type: Boolean,
@@ -23,9 +25,31 @@ export default {
       type: Boolean,
       default: false,
     },
+    chooseCity: {
+      type: Boolean,
+      default: false,
+    },
+    close: {
+      type: Boolean,
+      default: false,
+    },
+    fix: {
+      type: Boolean,
+      default: false,
+    },
+    appendIcon: {
+      type: String,
+      default: "",
+    },
+    prependIcon: {
+      type: String,
+      default: "",
+    },
   },
   methods: {
     click() {
+      // event.preventDefault();
+      // event.stopPropagation();
       this.$emit("click");
     },
   },
@@ -34,6 +58,9 @@ export default {
       return {
         Btn_entrance: this.entrance,
         Btn_submit: this.submit,
+        Btn_choose_city: this.chooseCity,
+        Btn_close: this.close,
+        Btn_fix: this.fix,
       };
     },
   },
@@ -58,6 +85,7 @@ export default {
   transition-timing-function: ease;
   transition-duration: 0.6s;
   transition-delay: 0s;
+  user-select: none;
   &:hover {
     border: 1px solid #a4ecce;
     color: #0cb66f;
@@ -81,10 +109,36 @@ export default {
   transition-timing-function: ease;
   transition-duration: 0.6s;
   transition-delay: 0s;
+  user-select: none;
   &:hover {
     background-color: #fff;
     border: 1px solid #a4ecce;
     color: #0cb66f;
   }
+}
+.Btn_choose_city {
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-size: 19px;
+  max-width: 250px;
+  height: 55px;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.Btn_close {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+&.material-icons {
+  font-size: 22px;
+  margin: 4px;
 }
 </style>
