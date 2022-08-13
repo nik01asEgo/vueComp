@@ -1,13 +1,22 @@
 <template>
   <div class="v_popup_contaner">
     <div class="v_popup">
-      <vButton class="close_btn" :close="true" prependIcon="close" @click="closePopup">
+      <vButton
+        class="close_btn"
+        :close="true"
+        prependIcon="close"
+        @click="$emit('close')"
+      >
       </vButton>
       <div class="v_wrapper">
         <span>Выберите город</span>
         <div class="input_wrapper"></div>
         <div class="cities_wrapper">
-          <p v-for="(item, index) in items" :key="index">
+          <p
+            v-for="(item, index) in items"
+            :key="index"
+            @click="$emit('change', item)"
+          >
             {{ item.name }}
           </p>
         </div>
@@ -20,6 +29,7 @@
 import vButton from "@/components/V_button.vue";
 export default {
   name: "v_popup",
+  emits: ["change", "close"],
   components: {
     vButton,
   },
@@ -38,9 +48,17 @@ export default {
     btnClick() {
       console.log("кнопка нажата");
     },
-    closePopup() {
-      this.$emit("closePopup");
+    onKeyDown(event) {
+      if (event.key === "Escape") {
+        this.$emit("close");
+      }
     },
+  },
+  mounted() {
+    window.addEventListener("keydown", this.onKeyDown);
+  },
+  beforeUnmount() {
+    window.removeEventListener("keydown", this.onKeyDown);
   },
 };
 </script>

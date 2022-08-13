@@ -113,8 +113,8 @@ export const adTypes = [
 
 export const cats = [
     {
-        image: "1.webp",
-        icon: "photo_2022_05_02_15_54_17.jpg",
+        image: "http://file.mobilmusic.ru/e6/b6/09/1144826-240.jpg",
+        icon: "https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png",
         name: "Мейн кун",
         city: "Москва",
         price: "80 Р",
@@ -123,8 +123,8 @@ export const cats = [
         available: true
     },
     {
-        image: "2.webp",
-        icon: "",
+        image: "http://file.mobilmusic.ru/e6/b6/09/1144826-240.jpg",
+        icon: "https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png",
         name: "Продажа",
         city: "Москва",
         price: "40000 Р",
@@ -133,8 +133,8 @@ export const cats = [
         available: true
     },
     {
-        image: "3.webp",
-        icon: "",
+        image: "http://file.mobilmusic.ru/e6/b6/09/1144826-240.jpg",
+        icon: "https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png",
         name: "Продажа",
         city: "Москва",
         price: "40000 Р",
@@ -143,8 +143,8 @@ export const cats = [
         available: true
     },
     {
-        image: "4.webp",
-        icon: "",
+        image: "http://file.mobilmusic.ru/e6/b6/09/1144826-240.jpg",
+        icon: "https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png",
         name: "3,5 мес принцесса Мура ищет семью!",
         city: "Москва",
         price: "10 Р",
@@ -153,8 +153,8 @@ export const cats = [
         available: true
     },
     {
-        image: "5.webp",
-        icon: "",
+        image: "http://file.mobilmusic.ru/e6/b6/09/1144826-240.jpg",
+        icon: "https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png",
         name: "Симон и Сима. Котята в добрые руки",
         city: "Москва",
         price: "Бесплатно",
@@ -163,8 +163,8 @@ export const cats = [
         available: true
     },
     {
-        image: "6.webp",
-        icon: "",
+        image: "http://file.mobilmusic.ru/e6/b6/09/1144826-240.jpg",
+        icon: "https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png",
         name: "Маленькие котята в добрые руки",
         city: "Москва",
         price: "10 Р",
@@ -173,8 +173,8 @@ export const cats = [
         available: true
     },
     {
-        image: "7.webp",
-        icon: "photo_2022_05_02_15_54_17.jpg",
+        image: "http://file.mobilmusic.ru/e6/b6/09/1144826-240.jpg",
+        icon: "https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png",
         name: "Уникальная Агата",
         city: "Москва",
         price: "Бесплатно",

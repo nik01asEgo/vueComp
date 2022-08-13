@@ -1,10 +1,10 @@
 <template>
   <div class="vContaner">
-    <vHeader class="vHeader" @showPopupChooseCity="showPopupChooseCity"></vHeader>
-    <vPopup v-if="isPopupVisible" :items="cities" @closePopup="closePopupChooseCity" />
-    <vMain class="vMain"></vMain>
-    <vNavigation class="vNavigation"></vNavigation>
-    <vFooter class="vFooter"></vFooter>
+    <vHeader class="vHeader" />
+    <div id="v-portal-modal" />
+    <vMain class="vMain" />
+    <vNavigation class="vNavigation" />
+    <vFooter class="vFooter" />
   </div>
 </template>
 
@@ -13,8 +13,6 @@ import vHeader from "./components/V_header.vue";
 import vMain from "./components/V_main.vue";
 import vNavigation from "./components/V_Navigation.vue";
 import vFooter from "./components/V_footer.vue";
-import vPopup from "@/components/V_popup.vue";
-import { cities } from "@/static_store";
 
 export default {
   name: "App",
@@ -23,22 +21,6 @@ export default {
     vMain,
     vNavigation,
     vFooter,
-    vPopup,
-  },
-  data() {
-    return {
-      cities,
-      citySelected: undefined,
-      isPopupVisible: false,
-    };
-  },
-  methods: {
-    showPopupChooseCity() {
-      this.isPopupVisible = true;
-    },
-    closePopupChooseCity() {
-      this.isPopupVisible = false;
-    },
   },
 };
 </script>

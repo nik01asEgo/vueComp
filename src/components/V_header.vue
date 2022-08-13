@@ -1,9 +1,16 @@
 <template>
   <div class="wrapper">
+    <Teleport v-if="isModalShowed" to="#v-portal-modal">
+      <vPopup
+        :items="cities"
+        @close="isModalShowed = false"
+        @change="onCityChange"
+      />
+    </Teleport>
     <div>
       <vButton
-        @click="showPopupChooseCity"
-        btnTitle="Москва"
+        @click="isModalShowed = true"
+        :btnTitle="currentCity?.name || 'Выберите город'"
         :entrance="false"
         :submit="false"
         :chooseCity="true"
@@ -32,22 +39,30 @@
 
 <script>
 import vButton from "@/components/V_button.vue";
+import vPopup from "@/components/V_popup.vue";
+import { cities } from "@/static_store";
 
 export default {
   name: "v_header",
   components: {
     vButton,
+    vPopup,
+  },
+  data() {
+    return {
+      cities,
+      currentCity: undefined,
+      isModalShowed: false,
+    };
   },
   props: {},
   methods: {
-    showPopupChooseCity() {
-      this.$emit("showPopupChooseCity");
-    },
     btnClick() {
       console.log("кнопка нажата");
     },
-    closePopupChooseCity() {
-      this.isPopupVisible = false;
+    onCityChange(city) {
+      this.currentCity = city;
+      this.isModalShowed = false;
     },
   },
 };

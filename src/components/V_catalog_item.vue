@@ -3,11 +3,7 @@
     <div class="v_catalog_item">
       <div class="v_catalog_item_image_contaner">
         <a href="http://google.com">
-          <img
-            class="v_catalog_item_image"
-            :src="require('../assets/images/' + item_data.image)"
-            alt="webp"
-          />
+          <img class="v_catalog_item_image" :src="item_data.image" alt="webp" />
         </a>
       </div>
       <div class="v_text_contaner">
@@ -23,10 +19,10 @@
       </div>
       <div class="v_owner_contaner">
         <a class="v_catalog_item_owner" href="http://google.com">
-          <div v-if="item_data.icon" class="v_icon_true">
-            <img :src="require('../assets/icons/' + item_data.icon)" alt="" />
+          <div class="v_icon">
+            <img :src="item_data.icon || ''" alt="" />
+            <div>{{ item_data.owner[0] }}</div>
           </div>
-          <div v-if="!item_data.icon" class="v_icon_false">{{ item_data.owner[0] }}</div>
           <div>
             {{ item_data.owner }}
           </div>
@@ -55,7 +51,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .v_line {
   color: rgb(196, 196, 196);
   opacity: 50%;
@@ -106,30 +102,34 @@ export default {
   font-weight: 500;
   text-align: left;
 }
-.v_icon_true {
+.v_icon {
   width: 40px;
   height: 40px;
   top: 0px;
-  left: 25px;
+  position: relative;
   border-radius: 50%;
-}
-.v_icon_false {
-  width: 40px;
-  height: 40px;
-  top: 0px;
-  left: 25px;
-  border-radius: 50%;
-  background-color: #e2e2e2;
-  color: #ffffff;
-  font-size: 30px;
-  text-align: center;
-  line-height: 40px;
-}
-.v_icon_true img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  overflow: hidden;
+  & > img {
+    width: 100%;
+    //object-fit: cover;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  & > div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: #e2e2e2;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    line-height: 40px;
+  }
 }
 .v_catalog_item_owner {
   text-decoration: none;
@@ -141,7 +141,6 @@ export default {
 }
 .v_catalog_item_owner div {
   align-self: center;
-  margin: 2px;
 }
 .v_catalog_item_price {
   text-decoration: none;
